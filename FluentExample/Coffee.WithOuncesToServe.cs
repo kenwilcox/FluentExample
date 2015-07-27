@@ -10,7 +10,9 @@ namespace FluentExample
 	{
 		private int _ounces;
 
-		public int OuncesToServe { get { return _ounces; } }
+		public int RawOunces { get { return _ounces; } }
+
+		public string Ounces { get { return _ounces + " oz"; } }
 
 		public Coffee WithOuncesToServe(int ounces)
 		{

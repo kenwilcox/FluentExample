@@ -45,6 +45,7 @@
     <Compile Include="Coffee.Roast.cs" />
     <Compile Include="Coffee.WithCream.cs" />
     <Compile Include="Coffee.WithOuncesToServe.cs" />
+    <Compile Include="Coffee.WithSugar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

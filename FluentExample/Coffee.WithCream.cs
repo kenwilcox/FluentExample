@@ -10,7 +10,9 @@ namespace FluentExample
 	{
 		private bool _cream;
 
-		public bool HasCream { get { return _cream; } }
+		public bool RawCream { get { return _cream; } }
+
+		public string Cream { get { return _cream ? "Yes" : "No"; } }
 
 		public Coffee WithCream()
 		{
