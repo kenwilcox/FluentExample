@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace FluentExample
 {
 	public partial class Coffee
@@ -15,13 +10,11 @@ namespace FluentExample
 			Dark
 		}
 
-		private CoffeeRoast _roast;
-
-		public CoffeeRoast RoastType { get { return _roast; } }
+		public CoffeeRoast RoastType { get; private set; }
 
 		public Coffee WithRoast(CoffeeRoast roast)
 		{
-			_roast = roast;
+			RoastType = roast;
 			return this;
 		}
 	}
