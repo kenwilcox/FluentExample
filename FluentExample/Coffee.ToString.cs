@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 
 namespace FluentExample
 {
@@ -8,13 +9,12 @@ namespace FluentExample
         {
             var ret = "";
             var propInfo = GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public);
-            foreach (var prop in propInfo)
+            foreach (var prop in propInfo.Where(prop => !prop.Name.StartsWith("Raw")))
             {
-                if (prop.Name.StartsWith("Raw")) continue;
-                if (ret.Length > 0)
-                    ret += string.Format(" - {0}: {1}", prop.Name, prop.GetValue(this));
-                else
-                    ret += string.Format("{0}: {1}", prop.Name, prop.GetValue(this));
+	            if (ret.Length > 0)
+		            ret += string.Format(" - {0}: {1}", prop.Name, prop.GetValue(this));
+	            else
+		            ret += string.Format("{0}: {1}", prop.Name, prop.GetValue(this));
             }
             return ret;
         }
